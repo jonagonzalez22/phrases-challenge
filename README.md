@@ -1,54 +1,59 @@
-# React + TypeScript + Vite
+# 💬 PhraseBoard Challenge - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada como parte de un challenge técnico. Permite agregar,
+visualizar, filtrar y eliminar frases, las cuales se almacenan localmente. Está
+construida con React y utiliza Context API para el manejo global del estado.
 
-Currently, two official plugins are available:
+## Estructura del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+src/ │ ├── assets/ → Recursos estáticos (imágenes, SVGs, etc.) ├── components/ →
+Componentes atómicos reutilizables (Input, Button, Modal, etc.) ├── context/ →
+Context API para manejar el estado global (phrases) ├── modules/ → Módulos
+funcionales agrupados por responsabilidad │ └── home/ → Módulo principal
+(SearchBar, Cards, ModalAddPhrase) ├── Pages/ → Contenedor principal de páginas
+(Home) ├── App.tsx → Componente principal ├── main.tsx → Punto de entrada └──
+index.css → Estilos globales
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ **React 18** (con Vite)
+- 🧠 **Context API** para gestión de estado
+- 💅 **CSS**
+- 💾 **localStorage** para persistencia
+- 🧪 **Jest**, **React Testing Library** y **Cypress**
+- 🧠 **TypeScript**
+-
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚧 Posibles mejoras
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Validaciones de input (máximo de caracteres, evitar duplicados).
+- Confirmación al eliminar frases.
+- Animaciones con Framer Motion.
+- Cambiar los keys de los items del componente Cards usando uuid y no el index.
+- Limpiar input al eliminar componente cuando se realice el filtrado.
+- Uso mejorado de HOC.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Instalación
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+# Clonar el repositorio
+git clone https://github.com/jonagonzalez22/phrases-challenge.git
+
+# Acceder al directorio
+cd phraseboard-challenge
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+
+# Ejecutar los tests
+npm run test
+
+# Correr Cypress en modo interactivo
+npm run cypress:open
+
+# O ejecutar tests en modo headless
+npm run cypress:run
 ```

@@ -17,7 +17,7 @@ describe('HomeHeader', () => {
 	});
 
 	it('should render the title and button', () => {
-		render(<HomeHeader />);
+		render(<HomeHeader title='Mis Frases' />);
 
 		expect(screen.getByText('Mis Frases')).toBeInTheDocument();
 		expect(screen.getByRole('button')).toBeInTheDocument();
