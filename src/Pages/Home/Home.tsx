@@ -4,15 +4,14 @@ import './Home.css';
 import { SearchBar } from '../../modules/home/SearchBar';
 import { HomeHeader } from '../../modules/home/HomeHeader';
 import { Cards } from '../../modules/home/Cards';
+import withTitle from '../../components/hoc/homeHeaderHoc';
 
-export type HomeProps = {
-	// types...
-};
+const HomeHeaderWithTitle = withTitle(HomeHeader, 'Mis Frases');
 
-const Home: React.FC<HomeProps> = ({}) => {
+const Home: React.FC = ({}) => {
 	return (
 		<article className='main-container-home'>
-			<HomeHeader />
+			<HomeHeaderWithTitle />
 			<SearchBar />
 			<Cards />
 		</article>

@@ -4,10 +4,10 @@ import { IconButton } from '../../../components/IconButton';
 import { ModalAddPhrase } from '../ModalAddPhrase';
 
 export type HomeHeaderProps = {
-	// types...
+	title?: string;
 };
 
-const HomeHeader: React.FC<HomeHeaderProps> = ({}) => {
+const HomeHeader: React.FC<HomeHeaderProps> = ({ title = '' }) => {
 	const [openModal, setOpenModal] = useState(false);
 	const handleOpenCloseModal = (): void => {
 		setOpenModal(!openModal);
@@ -16,7 +16,7 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({}) => {
 		<>
 			<ModalAddPhrase open={openModal} handleClose={handleOpenCloseModal} />
 			<header className='home-header'>
-				<h1 className='home-header-title'>Mis Frases</h1>
+				<h1 className='home-header-title'>{title}</h1>
 				<IconButton
 					icon='add'
 					variant='primary-outline'
