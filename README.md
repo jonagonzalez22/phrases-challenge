@@ -6,13 +6,15 @@ construida con React y utiliza Context API para el manejo global del estado.
 
 ## Estructura del proyecto
 
-src/ │ ├── assets/ → Recursos estáticos (imágenes, SVGs, etc.) ├── components/ →
-Componentes atómicos reutilizables (Input, Button, Modal, etc.) ├── context/ →
-Context API para manejar el estado global (phrases) ├── modules/ → Módulos
-funcionales agrupados por responsabilidad │ └── home/ → Módulo principal
-(SearchBar, Cards, ModalAddPhrase) ├── Pages/ → Contenedor principal de páginas
-(Home) ├── App.tsx → Componente principal ├── main.tsx → Punto de entrada └──
-index.css → Estilos globales
+- `src/context/` — Context API para manejar el estado global de las frases
+- `src/modules/` — Módulos funcionales agrupados por responsabilidad
+
+  - `home/` — Módulo principal (SearchBar, Cards, ModalAddPhrase)
+
+- `src/Pages/` — Contenedor principal de páginas (Home)
+- `src/App.tsx` — Componente raíz de la aplicación
+- `src/main.tsx` — Punto de entrada de React
+- `src/index.css` — Estilos globales
 
 ## 🚀 Tech Stack
 
